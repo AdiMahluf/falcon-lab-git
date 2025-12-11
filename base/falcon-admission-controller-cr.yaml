@@ -1,9 +1,12 @@
-# falcon-operator.yaml – install the operator + namespace
-apiVersion: v1
-kind: Namespace
+apiVersion: falcon.crowdstrike.com/v1alpha1
+kind: FalconAdmission
 metadata:
-  name: falcon-system
----
-# ... operator CRDs + Deployment from CrowdStrike install manifest ...
-yaml
-Copy code
+  name: falcon-admission
+  namespace: falcon-system
+spec:
+  falcon:
+    cidSecretName: falcon-cid
+
+  admission:
+    mode: monitor           # or 'enforce' if you want blocking
+    namespaceSelector: {}   # empty = all namespaces
