@@ -1,10 +1,10 @@
-# base/falcon-sensor-cr.yaml
+# overlays/lab/patch-falcon-cid.yaml
 apiVersion: falcon.crowdstrike.com/v1alpha1
 kind: FalconSensor
 metadata:
   name: falcon-sensor
   namespace: falcon-system
-spec:
-  falcon:
-    cid: "<YOUR-FALCON-CID>"
-    # other config: cloud region, tags, etc.
+patch: |
+  - op: replace
+    path: /spec/falcon/cid
+    value: "<YOUR-LAB-CID>"

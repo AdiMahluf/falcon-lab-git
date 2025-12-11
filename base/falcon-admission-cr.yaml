@@ -1,0 +1,10 @@
+# falcon-admission-cr.yaml – FalconAdmission CR
+apiVersion: falcon.crowdstrike.com/v1alpha1
+kind: FalconAdmission
+metadata:
+  name: falcon-admission
+  namespace: falcon-system
+spec:
+  falcon:
+    cid: "<YOUR-LAB-FALCON-CID>"
+    # admission mode, namespace selector, etc

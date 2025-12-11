@@ -1,0 +1,12 @@
+# overlays/lab/kustomization.yaml
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: falcon-system
+
+resources:
+  - ../../base/falcon-operator.yaml
+  - ../../base/falcon-sensor-cr.yaml
+  - ../../base/falcon-admission-controller-cr.yaml
+
+patches:
+  - path: patch-falcon-cid.yaml

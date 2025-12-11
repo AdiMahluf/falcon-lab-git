@@ -1,0 +1,9 @@
+# falcon-operator.yaml – install the operator + namespace
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: falcon-system
+---
+# ... operator CRDs + Deployment from CrowdStrike install manifest ...
+yaml
+Copy code
