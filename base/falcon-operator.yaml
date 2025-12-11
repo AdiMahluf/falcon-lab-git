@@ -1,1 +1,7 @@
-
+# base/falcon-operator.yaml
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: falcon-system
+---
+# (Operator deployment / CRDs etc – from CrowdStrike's official manifest)

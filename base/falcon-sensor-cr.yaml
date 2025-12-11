@@ -1,0 +1,22 @@
+# base/falcon-sensor-cr.yaml
+apiVersion: falcon.crowdstrike.com/v1alpha1
+kind: FalconSensor
+metadata:
+  name: falcon-sensor
+  namespace: falcon-system
+spec:
+  falcon:
+    cid: "<YOUR-FALCON-CID>"
+    # other config: cloud region, tags, etc.
+
+---
+# base/falcon-admission-controller-cr.yaml
+apiVersion: falcon.crowdstrike.com/v1alpha1
+kind: FalconAdmission
+metadata:
+  name: falcon-admission
+  namespace: falcon-system
+spec:
+  falcon:
+    cid: "<YOUR-FALCON-CID>"
+    # mode: enforcing / monitor, namespace selectors, etc.
