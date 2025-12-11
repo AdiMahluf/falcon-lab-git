@@ -4,7 +4,9 @@ kind: FalconSensor
 metadata:
   name: falcon-sensor
   namespace: falcon-system
+  labels:
+   test-version: "1"
 spec:
   falcon:
-    cid: "<YOUR-FALCON-CID>"
+    cidSecretName: falcon-cid
     # other config: cloud region, tags, etc.
